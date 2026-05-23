@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to eid gallary</title>
+    <style>
+        body{
+            background: gold;
+            background-repeat: no-repeat;
+           
+        }
+        .categories {
+            display: flex;
+            justify-content:space-around;
+            margin-top: 30px;
+        }
+         .categories > p{
+           cursor: pointer;
+           font-size: 22px;
+           font-weight:bold;
+        }
+
+        .pics {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content:center;
+        }
+        .pics img{
+           
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.4s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        }
+         .pics img:hover{
+           
+           transform: scale(1.05);
+
+        }
+        #familyText, #animalText, #recipeText{
+            border-radius: 15px;
+            padding: 90px 90px;
+            display: flex;
+            overflow: hidden;
+            margin: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 110px;
+
+            background-color: aliceblue;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5) ;
+    transition: 0.4s;
+        }
+        #familyText:hover, #animalText:hover, #recipeText:hover{
+                       transform: scale(1.05);
+
+
+        }
+
+
+    </style>
+   
+</head>
+
+<body>
+   
+
+<div class="categories">
+        <p id="familyText" onclick="showFamily()">Family</p>
+        <p id="animalText" onclick="showAnimal()">Animals</p>
+        <p id="recipeText" onclick="showRecipe()">Recipies</p>
+</div>
+
+        <div class="pics" id="familyPics">
+            <img src="images/f1.jpeg" >
+            <img src="images/f2.jpeg" >
+            <img src="images/f3.jpeg" >
+            <img src="images/f4.jpeg" >
+            <img src="images/f5.jpeg" >
+            <img src="images/f6.jpeg" >
+        </div>
+
+
+        <div class="pics" id="animalPics">
+            <img  src="images/a1.jpeg" width="250px" height="200px">
+            <img  src="images/a2.jpeg" width="250px" height="200px">
+            <img  src="images/a3.jpeg" width="250px" height="200px">
+            <img  src="images/a4.jpeg" width="250px" height="200px">
+            <img  src="images/a5.jpeg" width="250px" height="200px">
+            <img  src="images/a6.jpeg" width="250px" height="200px">
+
+        </div>
+
+
+        <div class="pics" id="recipePics">
+            <img  src="images/r1.jpeg" width="250px" height="200px">
+            <img  src="images/r2.jpeg" width="250px" height="200px">
+            <img  src="images/r3.jpeg" width="250px" height="200px">
+            <img  src="images/r4.jpeg" width="250px" height="200px">
+            <img  src="images/r5.jpeg" width="250px" height="200px">
+        </div>
+    
+ 
+
+         <script>
+        let family=document.getElementById("familyPics");
+        let animal=document.getElementById("animalPics");
+        let recipe=document.getElementById("recipePics");
+
+        family.style.display="none";
+        animal.style.display="none";
+        recipe.style.display="none";
+
+        function showFamily(){
+            family.style.display="flex";
+            animal.style.display="none";
+            recipe.style.display="none";
+            document.getElementById("animalText").style.display="none";
+            document.getElementById("recipeText").style.display="none";
+            document.getElementById("familyText").style.display="none";
+            
+            
+        }
+        function showAnimal(){
+              family.style.display="none";
+            animal.style.display="flex";
+            recipe.style.display="none";
+             document.getElementById("familyText").style.display="none";
+            document.getElementById("recipeText").style.display="none";
+                        document.getElementById("animalText").style.display="none";
+
+        }
+          function showRecipe(){
+              family.style.display="none";
+            animal.style.display="none";
+            recipe.style.display="flex";
+             document.getElementById("familyText").style.display="none";
+            document.getElementById("animalText").style.display="none";
+                    document.getElementById("recipeText").style.display="none";
+
+        }
+
+    </script>
+</body>
+
+</html>
